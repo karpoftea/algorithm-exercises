@@ -1,0 +1,22 @@
+### Gradle
+.gradle
+build/
+target/
+out/
+
+### IntelliJIDEA
+*.iml
+*.idea
+*target
+
+### MacOS
+*.DS_Store
+
+### maven-shade-plugin
+*dependency-reduced-pom.xml
+
+### Developer local resources
+*.dev-local
+
+### Any project local logs
+*.log
