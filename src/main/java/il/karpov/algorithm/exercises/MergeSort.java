@@ -19,7 +19,9 @@ public class MergeSort {
     }
 
     private static int[] tail(int[] a) {
-        if (a.length == 0) throw new IllegalArgumentException();
+        if (a.length == 0) {
+            throw new IllegalArgumentException();
+        }
 
         int[] arr = new int[a.length - 1];
         for (int i = 1; i < a.length; i++) {
@@ -28,7 +30,7 @@ public class MergeSort {
         return arr;
     }
 
-    private static  int[] concat(int element, int[] arr) {
+    private static int[] concat(int element, int[] arr) {
         int[] a = new int[arr.length + 1];
         a[0] = element;
 
