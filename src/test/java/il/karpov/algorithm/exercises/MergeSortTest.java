@@ -32,8 +32,8 @@ public class MergeSortTest {
         };
     }
 
-    @Test
-    public void mergeIter_should_mergeSortedArrays() {
-
+    @Test(dataProvider = "getMergedArrays")
+    public void mergeIter_should_mergeSortedArrays(int[] a, int[] b, int[] expected) {
+        Assert.assertTrue(Arrays.equals(MergeSort.mergeIter(a, b), expected));
     }
 }

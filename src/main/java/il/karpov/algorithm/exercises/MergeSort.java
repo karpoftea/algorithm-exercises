@@ -40,7 +40,38 @@ public class MergeSort {
     }
 
 
-    int[] mergeIter(int[] a, int[] b) {
-        return null;
+    static int[] mergeIter(int[] a, int[] b) {
+        if (a.length == 0) {
+            return b;
+        }
+
+        if (b.length == 0) {
+            return a;
+        }
+
+        int size = a.length + b.length;
+        int[] arr = new int[size];
+
+        for (int i = 0, ai = 0, bi = 0; i < size; i++) {
+            if (ai < a.length && bi < b.length) {
+                if (a[ai] < b[bi]) {
+                    arr[i] = a[ai];
+                    ai++;
+                } else {
+                    arr[i] = b[bi];
+                    bi++;
+                }
+            } else {
+                if (ai < a.length) {
+                    arr[i] = a[ai];
+                    ai++;
+                } else {
+                    arr[i] = b[bi];
+                    bi++;
+                }
+            }
+        }
+
+        return arr;
     }
 }
