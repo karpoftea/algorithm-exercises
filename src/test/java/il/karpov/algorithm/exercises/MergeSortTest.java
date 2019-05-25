@@ -36,4 +36,25 @@ public class MergeSortTest {
     public void mergeIter_should_mergeSortedArrays(int[] a, int[] b, int[] expected) {
         Assert.assertTrue(Arrays.equals(MergeSort.mergeIter(a, b), expected));
     }
+
+    @Test(dataProvider = "getUnsortedArrays")
+    public void mergeSort_should_sortArrayInAscOrder(int[] unsorted, int[] expected) {
+        Assert.assertTrue(Arrays.equals(MergeSort.mergeSort(unsorted), expected));
+    }
+
+    @DataProvider
+    public static Object[][] getUnsortedArrays() {
+        return new Object[][] {
+                { null, null },
+                { new int[0], new int[0] },
+                { new int[] { 1 }, new int[] { 1 } },
+                { new int[] { 1, 2 }, new int[] { 1, 2 } },
+                { new int[] { 2, 1 }, new int[] { 1, 2 } },
+                { new int[] { 1, 2, 3 }, new int[] { 1, 2, 3 } },
+                { new int[] { 3, 2, 1 }, new int[] { 1, 2, 3 } },
+                { new int[] { 3, 1, 2 }, new int[] { 1, 2, 3 } },
+                { new int[] { 2, 3, 1 }, new int[] { 1, 2, 3 } },
+                { new int[] { 3, 3, 1 }, new int[] { 1, 3, 3 } },
+        };
+    }
 }

@@ -2,6 +2,14 @@ package il.karpov.algorithm.exercises;
 
 public class MergeSort {
 
+    static int[] mergeSort(int[] a) {
+        if (a == null) return null;
+        if (a.length < 2) return a;
+
+        int middle = a.length / 2;
+        return mergeIter(mergeSort(slice(a, 0, middle)), mergeSort(slice(a, middle, a.length)));
+    }
+
     static int[] mergeRcr(int[] a, int[] b) {
         if (a.length == 0) {
             return b;
@@ -16,6 +24,15 @@ public class MergeSort {
         } else {
             return concat(b[0], mergeRcr(tail(b), a));
         }
+    }
+
+    private static int[] slice(int[] a, int startInclusive, int endExclusive) {
+        int[] arr = new int[endExclusive - startInclusive];
+        for (int i = startInclusive, j = 0; i < endExclusive; i++, j++) {
+            arr[j] = a[i];
+        }
+
+        return arr;
     }
 
     private static int[] tail(int[] a) {
