@@ -5,7 +5,10 @@ import java.util.Map;
 
 public class Exer12IsPermutation {
 
+//    Check Permutation: Given two strings,write a method to decide if one is a permutation of the
+//    other.
     public boolean isPermutation(String ethalon, String word) {
+        // O(e + w)
         if (ethalon == null || word == null) return false;
         if (ethalon.length() != word.length()) return false;
 
