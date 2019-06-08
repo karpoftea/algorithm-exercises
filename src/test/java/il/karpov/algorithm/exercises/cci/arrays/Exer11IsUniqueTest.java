@@ -1,12 +1,12 @@
-package il.karpov.algorithm.exercises.cci;
+package il.karpov.algorithm.exercises.cci.arrays;
 
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-public class ArraysAndStringsTest {
+public class Exer11IsUniqueTest {
 
-    ArraysAndStrings tested = new ArraysAndStrings();
+    Exer11IsUnique tested = new Exer11IsUnique();
 
     @DataProvider
     private static Object[][] getStrings() {
