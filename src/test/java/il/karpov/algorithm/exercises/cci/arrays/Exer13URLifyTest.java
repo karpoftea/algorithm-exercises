@@ -9,10 +9,10 @@ public class Exer13URLifyTest {
     @DataProvider
     public static Object[][] getStrings() {
         return new Object[][] {
-                {"   ", 0, "%20"},
-                {"a man  ", 4, "a%20man"},
-                {"a man     ", 5, "a%20man%20"},
-                {" a man    ", 5, "%20a%20man"},
+                {"   ", 1, "%20"},
+                {"a man  ", 5, "a%20man"},
+                {"a man     ", 6, "a%20man%20"},
+                {" a man    ", 6, "%20a%20man"},
         };
     }
 
