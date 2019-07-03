@@ -1,5 +1,6 @@
 package il.karpov.algorithm.exercises.intrv.concurrency;
 
+import il.karpov.algorithm.exercises.intrv.concurrency.SpinLock.SpinLock2Impl;
 import il.karpov.algorithm.exercises.intrv.concurrency.SpinLock.SpinLockImpl;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -11,8 +12,16 @@ import java.util.concurrent.TimeUnit;
 public class SpinLockTest {
 
     @Test
-    public void testCriticalSection() throws InterruptedException {
-        SpinLockImpl spinLock = new SpinLockImpl();
+    public void testSpinLockImpl() throws InterruptedException {
+        testSpinLock(new SpinLockImpl());
+    }
+
+    @Test
+    public void testSpinLock2Impl() throws InterruptedException {
+        testSpinLock(new SpinLock2Impl());
+    }
+
+    private void testSpinLock(SpinLock spinLock) throws InterruptedException {
         Counter counter = new Counter();
         int expectedValue = 10_000_000;
 

@@ -11,6 +11,10 @@ repositories {
     mavenCentral()
 }
 
+test {
+    useTestNG()
+}
+
 dependencies {
     testCompile 'org.testng:testng:6.10'
 }

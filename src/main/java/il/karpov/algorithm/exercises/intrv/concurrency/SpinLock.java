@@ -2,6 +2,7 @@ package il.karpov.algorithm.exercises.intrv.concurrency;
 
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicLong;
+import java.util.concurrent.atomic.AtomicReference;
 
 /**
  * <p><b>Problem</b>: create an implementation of simple lock. Implementation must not use 'synchronized' keyword,
@@ -45,6 +46,21 @@ public interface SpinLock {
         public void unlock() {
             if (threadId.get() != Thread.currentThread().getId()) return;
             acquired.set(false);
+        }
+    }
+
+    class SpinLock2Impl implements SpinLock {
+
+        private final AtomicReference<Thread> threadRef = new AtomicReference<>();
+
+        @Override
+        public void lock() {
+            while (!threadRef.compareAndSet(null, Thread.currentThread())) ;
+        }
+
+        @Override
+        public void unlock() {
+            threadRef.compareAndSet(Thread.currentThread(), null);
         }
     }
 
