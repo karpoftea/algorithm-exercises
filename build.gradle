@@ -17,4 +17,6 @@ test {
 
 dependencies {
     testCompile 'org.testng:testng:6.10'
+    testCompile 'org.hamcrest:hamcrest-library:2.1'
+
 }
