@@ -24,4 +24,14 @@ public class Exer11IsUniqueTest {
     public void isUnique_should_returnTrue_when_noDuplicateCharsInString(String word, boolean expected) {
         Assert.assertEquals(tested.isUnique(word), expected);
     }
+
+    @Test(dataProvider = "getStrings")
+    public void isUnique2_should_returnTrue_when_noDuplicateCharsInString(String word, boolean expected) {
+        Assert.assertEquals(tested.isUnique2(word), expected);
+    }
+
+    @Test(dataProvider = "getStrings")
+    public void isUnique3_should_returnTrue_when_noDuplicateCharsInString(String word, boolean expected) {
+        Assert.assertEquals(tested.isUnique3(word), expected);
+    }
 }
