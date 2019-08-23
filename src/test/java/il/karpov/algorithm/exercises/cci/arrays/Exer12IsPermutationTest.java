@@ -33,4 +33,11 @@ public class Exer12IsPermutationTest {
         Exer12IsPermutation exer = new Exer12IsPermutation();
         Assert.assertEquals(exer.isPermutation(ethalon, word), expected);
     }
+
+    @Test(dataProvider = "getStrings")
+    public void isPermutation2_should_returnTrue_when_oneStringIsPermOfAnother(String ethalon, String word,
+        boolean expected) {
+        Exer12IsPermutation exer = new Exer12IsPermutation();
+        Assert.assertEquals(exer.isPermutation2(ethalon, word), expected);
+    }
 }

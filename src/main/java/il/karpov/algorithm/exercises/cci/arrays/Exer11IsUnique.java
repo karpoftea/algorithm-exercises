@@ -3,7 +3,7 @@ package il.karpov.algorithm.exercises.cci.arrays;
 import java.util.HashMap;
 import java.util.Map;
 
-// 1.1.
+// 1.1
 // Is Unique: Implement an algorithm to determine if a string has all unique characters.
 // What if you cannot use additional data structures?
 public class Exer11IsUnique {
