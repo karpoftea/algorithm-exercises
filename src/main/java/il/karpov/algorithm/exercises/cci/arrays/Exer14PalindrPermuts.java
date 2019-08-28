@@ -15,6 +15,8 @@ public class Exer14PalindrPermuts {
 
     private java.util.Set<Character> SPECIAL_SYMBOLS = new HashSet<>(java.util.Arrays.asList(' ', ','));
 
+    // O(n) - time complexity
+    // O(n) - space complexity
     public boolean isPalindrPermut(String word) {
         if (word == null || word.length() == 0) {
             return true;
