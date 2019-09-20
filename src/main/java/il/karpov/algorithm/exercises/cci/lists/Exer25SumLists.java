@@ -11,8 +11,8 @@ package il.karpov.algorithm.exercises.cci.lists;
 // Input:(6 -> 1 -> 7) + (2 -> 9 -> 5). That is,617 + 295. Output:9 -> 1 -> 2. That is, 912.
 public class Exer25SumLists {
 
-    // todo add FOLLOW UP solution
-    public Node sumLists(Node l1, Node l2) {
+    // original solution
+    public Node sumReversedLists(Node l1, Node l2) {
         if (l1 == null && l2 == null) {
             return null;
         }
@@ -45,4 +45,26 @@ public class Exer25SumLists {
         return rHead;
     }
 
+    // follow up solution
+    public Node sumLists(Node l1, Node l2) {
+        if (l1 == null && l2 == null) {
+            return null;
+        }
+
+        l1 = reverseList(l1);
+        l2 = reverseList(l2);
+
+        return reverseList(sumReversedLists(l1, l2));
+    }
+
+    private Node reverseList(Node list) {
+        Node prev = null;
+        while (list != null) {
+            Node next = list.next;
+            list.next = prev;
+            prev = list;
+            list = next;
+        }
+        return prev;
+    }
 }
